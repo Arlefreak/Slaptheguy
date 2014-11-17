@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>frames</key>
+		<dict>
+			<key>active.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,1228},{386,154}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{0,0},{386,154}}</string>
+				<key>sourceSize</key>
+				<string>{386,154}</string>
+			</dict>
+
+			<key>normal.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,1073},{386,154}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{0,0},{386,154}}</string>
+				<key>sourceSize</key>
+				<string>{386,154}</string>
+			</dict>
+
+			<key>title.jpg</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,0},{868,1072}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{0,0},{868,1072}}</string>
+				<key>sourceSize</key>
+				<string>{868,1072}</string>
+			</dict>
+
+		</dict>
+
+		<key>metadata</key>
+		<dict>
+			<key>format</key>
+			<integer>2</integer>
+			<key>size</key>
+			<string>{1024,2048}</string>
+			<key>textureFileName</key>
+			<string>sprites.png</string>
+			</dict>
+		</dict>
+</plist>
