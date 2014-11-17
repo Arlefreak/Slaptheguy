@@ -164,6 +164,65 @@ var gameLayer = cc.Layer.extend({
         var that = this;
         var scale = null;
         var scale2 = null;
+        if (cc.sys.capabilities.hasOwnProperty('touches')) {
+            cc.eventManager.addListener({
+                event: cc.EventListener.TOUCH_ALL_AT_ONCE,
+                onTouchesEnded: function(touches, event) {
+                    if (touches.length === 1) {
+                        if (touches[0].getLocationX() > size.width / 2) {
+                            if (that.turn) {
+                                that.attackAction();
+                                scale = cc.scaleBy(0.5, 0, 1);
+                                scale2 = cc.scaleTo(that.slapCooldown - 0.5, 1, 1);
+                                that.rightBar.runAction(
+                                    cc.sequence(
+                                        scale,
+                                        scale2
+                                    )
+                                );
+                            } else {
+                                that.defendAction();
+                                scale = cc.scaleBy(0.5, 0, 1);
+                                scale2 = cc.scaleTo(that.defendCooldown - 0.5, 1, 1);
+                                that.rightBar.runAction(
+                                    cc.sequence(
+                                        scale,
+                                        scale2
+                                    )
+                                );
+                            }
+                        } else {
+                            if (!that.turn) {
+                                that.attackAction();
+                                scale = cc.scaleBy(0.5, 0, 1);
+                                scale2 = cc.scaleTo(that.slapCooldown - 0.5, 1, 1);
+                                that.leftBar.runAction(
+                                    cc.sequence(
+                                        scale,
+                                        scale2
+                                    )
+                                );
+                            } else {
+                                that.defendAction();
+                                scale = cc.scaleBy(0.5, 0, 1);
+                                scale2 = cc.scaleTo(that.defendCooldown - 0.5, 1, 1);
+                                that.leftBar.runAction(
+                                    cc.sequence(
+                                        scale,
+                                        scale2
+                                    )
+                                );
+                            }
+                        }
+                    } else {
+                        that.defendAction();
+                        that.attackAction();
+                    }
+                    cc.log("Touch Ended: " + touches[0].getLocationX());
+                    cc.log("Touch Ended 2: " + touches[1].getLocationX());
+                },
+            }, this);
+        }
         if (cc.sys.capabilities.hasOwnProperty('keyboard')) {
             cc.eventManager.addListener({
                 event: cc.EventListener.KEYBOARD,
